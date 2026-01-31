@@ -17,6 +17,6 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: testnewrepo
         # Run this image
-        image: nginx:1.14
+        image: shivanitusharsharma/testrepo
