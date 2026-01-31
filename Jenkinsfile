@@ -4,7 +4,6 @@ pipeline {
     environment {
         IMAGE_NAME = "shivanitusharsharma/testrepo"
         IMAGE_TAG  = "09"
-        KUBE_CONFIG = "/var/lib/jenkins/.kube/config"
     }
 
     stages {
@@ -30,6 +29,7 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
+                      echo "Docker user: $DOCKER_USER"
                       echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
                       docker push $IMAGE_NAME:$IMAGE_TAG
                     '''
