@@ -1,10 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  # Unique key of the Deployment instance
-  name: deployment-example
+  name: static-web
 spec:
-  # 3 Pods should exist at all times.
   replicas: 3
   selector:
     matchLabels:
@@ -12,11 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        # Apply this label to pods and default
-        # the Deployment label selector to this value
         app: nginx
     spec:
       containers:
-      - name: testnewrepo
-        # Run this image
+      - name: static-web
         image: shivanitusharsharma/testrepo:09
+        ports:
+        - containerPort: 80
