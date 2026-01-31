@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "shivani/static-app"
-        IMAGE_TAG  = ""
+        IMAGE_NAME = "shivanitusharsharma/testrepo"
+        IMAGE_TAG  = "09"
         KUBE_CONFIG = "/var/lib/jenkins/.kube/config"
     }
 
